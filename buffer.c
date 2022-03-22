@@ -4,6 +4,7 @@
 #define MAX_CHAR 32
 
 int main() {
+    setuid(0);
     printf("Testing!\n");
 
     char sentence[MAX_CHAR]; //this take the input correctly.
