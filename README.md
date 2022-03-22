@@ -12,6 +12,7 @@
 4. Log in with: 
       Username: starthere Password: password
 5. Exploitable binaries can be found on the desktop - select one to start the program.
+6. Details for each program and it's exploit can be found below; including the recommended inputs.
 
 ## Included Exploits
 This machine demonstrates how SUID permissions can be exploited in 2 different ways; first by using 
