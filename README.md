@@ -25,7 +25,7 @@ The program file has SUID permissions which allows for the user to have temporar
 the file and passing in the input as an arguement we are able to run the `'motd'` program. 
 
 When arguements are passed in, there is a value below the stack which by default, is 0; however, the input 
-overwrites aims to overwrite this value. For the sake of the demonstration, we know that the input aims to 
+aims to overwrite this value. For the sake of the demonstration, we know that the input aims to 
 overwrite this value to be 0xdeadbeef so the program checks for this - if the value is 0 then
 the program acts normally but if it's equal to 0xdeadbeef then it runs the `'motd'` program.
 
