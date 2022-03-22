@@ -14,13 +14,13 @@ file being exploited.
 ### Buffer Overflow
 A buffer overflow attack can be carried out from the starting account to gain access into Jeff's account. 
 The program file has SUID permissions which allows for the user to have temporary root access, so by running
-the file and causing a buffer overflow, we are able to write over the return pointer to be the pointer for a
-shell. Since the shell is being opened by the SUID file, this means the shell will have the same permissions; 
-therefore allowing the shell root access.
+the file and causing a buffer overflow by passing in shell code as an arguement, we are able to write over the 
+return pointer to be the pointer for a shell. Since the shell is being opened by the SUID file, this means the 
+shell will have the same permissions; therefore allowing the shell root access.
 
-The code demonstrting the buffer overflow vulnerability doesn't use any security features ('gets' simply
-reads in the line save saves to the variable) and the input from the user isn't checked to ensure it fits 
-within the variable memory.  
+The code demonstrting the buffer overflow vulnerability doesn't use any security features as the stack protector
+and ASLR features are disabled ('gets' simply reads in the line save saves to the variable) and the input from 
+the user isn't checked to ensure it fits within the variable memory.  
 
 The shellcode used to demonstrate the vulnerability is:
 
