@@ -1,6 +1,6 @@
 # CSCM28
 
-*** Oliver Morris & Amy Mason's CW2 ***
+*** Oliver Morris (******) & Amy Mason (986832) CW2 ***
 
 ## Installation & Setup
 ? A link to the virtual machine can be found below ?
@@ -14,17 +14,16 @@ file being exploited.
 ### Buffer Overflow
 A buffer overflow attack can be carried out from the starting account to gain access into Jeff's account. 
 The program file has SUID permissions which allows for the user to have temporary root access, so by running
-the file and causing a buffer overflow by passing in shell code as an arguement, we are able to write over the 
-return pointer to be the pointer for a shell. Since the shell is being opened by the SUID file, this means the 
-shell will have the same permissions; therefore allowing the shell root access.
+the file and passing in the input as an arguement we are able to run the `'motd'` program. 
 
-The code demonstrting the buffer overflow vulnerability doesn't use any security features as the stack protector
-and ASLR features are disabled ('gets' simply reads in the line save saves to the variable) and the input from 
-the user isn't checked to ensure it fits within the variable memory.  
+When arguements are passed in, there is a value below the stack which by default, is 0; however, the input 
+overwrites aims to overwrite this value. For the sake of the demonstration, we know that the input aims to 
+overwrite this value to be 0xdeadbeef so the program checks for this - if the value is 0 then
+the program acts normally but if it's equal to 0xdeadbeef then it runs the `'motd'` program.
 
 The shellcode used to demonstrate the vulnerability is:
 
-`run python -c 'print "A"*8 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x89\xc1\x89\xc2\xb0\x0b\xcd\x80\x31\xc0\x40\xcd\x80" + "\xff\xf\xea\xd0”’`
+python -c 'print "A"*16 + "\xef\xbe\xad\xde"'
 
 ### Path Manipulation
 Path manipulation can be carried out by running a call to a function (e.g. ls or cat) but not including the path; 
