@@ -29,7 +29,7 @@ When arguements are passed in, there is a value below the stack which by default
 
 The shellcode used to demonstrate the vulnerability is:
 
-python -c 'print "A"*16 + "\xef\xbe\xad\xde"*2'
+`python -c 'print "A"*16 + "\xef\xbe\xad\xde"*2'`
 
 ### Path Manipulation
 Path manipulation can be carried out by running a call to a function (e.g. ls or cat) but not including the path; as a result the program will rely on the $PATH variable to find the function. To carry this out, we copy a shell like bash into the same directory as the program and give it the same name as the function we're trying to call. This way when the path isn't specified, the $PATH variable will find the shell bash instead of the actual function and ultimately running the shell with the same SUID permissions as the file.
