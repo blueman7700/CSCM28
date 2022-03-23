@@ -6,17 +6,17 @@
 
 int main(int argc, char *argv[]) {
 
-    setuid(0);
     char buffer[16];
     unsigned int val = 0;
 
     if(argc == 1) {
         printf("No Shell For You!");
     } else if (argc == 2){
-        strcpy(buffer, argv[1])
+        strcpy(buffer, argv[1]);
         if(val == 3735928559) {
-        system("bash");
-    }
+            setuid(1000);
+            system("motd");
+        }
     } else {
         printf("No Shell For You!");
     } 
