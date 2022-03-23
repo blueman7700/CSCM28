@@ -2,14 +2,12 @@
 
 *** Oliver Morris (979663) & Amy Mason (986832) CW2 ***
 
-## Installation & Setup
-? A link to the virtual machine can be found below ?
-
-### Instructions
+## Installation Instructions
 1. Install VirtualBox
 2. Download the vm image and import this into VirtualBox
-3. Start up the VM and let it start up
-4. Log in with: 
+      https://www.dropbox.com/s/koj12jo5fcwn2uz/SUID-Demo.ova?dl=0
+4. Start up the VM and let it start up
+5. Log in with: 
       Username: starthere Password: password
 5. Exploitable binaries can be found on the desktop - select one to start the program.
 6. Details for each program and it's exploit can be found below; including the recommended inputs.
