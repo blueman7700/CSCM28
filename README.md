@@ -6,7 +6,7 @@
 1. Install VirtualBox
 2. Download the vm image and import this into VirtualBox
 
-		https://www.dropbox.com/s/koj12jo5fcwn2uz/SUID-Demo.ova?dl=0
+	~~https://www.dropbox.com/s/koj12jo5fcwn2uz/SUID-Demo.ova?dl=0~~ sorry this is long gone :(
       
 4. Start up the VM and let it start up
 5. Log in with: 
